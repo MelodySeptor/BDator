@@ -1,7 +1,65 @@
 package generalModules;
 
-import bdator.DataBaseMS;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 
-public class MySQL implements DataBaseMS{
+import components.DataContainer;
+import components.GeneralDataBase;
+
+public class MySQL implements GeneralDataBase {
+
+	@Override
+	public Connection createConnection(String driver, String urlConnection, String user, String password) {
+		Connection conn;
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(urlConnection, user, password);
+		} catch (Exception e) {
+			conn = null;
+		}
+		return conn;
+	}
+
+	@Override
+	public Statement createStatement(Connection connection) {
+		Statement stat;
+		try {
+			stat = connection.createStatement();
+		} catch (Exception e) {
+			stat = null;
+		}
+		return stat;
+	}
+
+	@Override
+	public ResultSet executeQuery(String query, Statement statement) {
+		ResultSet res;
+		try {
+			res = statement.executeQuery(query);
+		} catch (Exception e) {
+			res = null;
+		}
+		return res;
+	}
+
+	@Override
+	public ArrayList<DataContainer> processData(ArrayList<String> dataType, ArrayList<String> dataFields,
+			ResultSet dataJava) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean closeStatement(Statement statement) {
+		try {
+			statement.close();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 
 }

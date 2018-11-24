@@ -5,7 +5,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public interface Connector {
+/**
+ * Interface for setUp all methods to control dataBase with MySQL.
+ * 
+ * @author melody
+ *
+ */
+public interface GeneralDataBase {
 	/**
 	 * Create the connection for dataBase.
 	 * 
