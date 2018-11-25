@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author melody
  *
  */
-public interface GeneralDataBase {
+public interface MySQLAndOracle {
 	/**
 	 * Create the connection for dataBase.
 	 * 

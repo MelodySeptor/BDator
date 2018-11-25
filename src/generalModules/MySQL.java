@@ -7,9 +7,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import components.DataContainer;
-import components.GeneralDataBase;
+import components.MySQLAndOracle;
 
-public class MySQL implements GeneralDataBase {
+public class MySQL implements MySQLAndOracle {
+
+	public MySQL() {
+
+	}
 
 	@Override
 	public Connection createConnection(String driver, String urlConnection, String user, String password) {
@@ -48,8 +52,12 @@ public class MySQL implements GeneralDataBase {
 	@Override
 	public ArrayList<DataContainer> processData(ArrayList<String> dataType, ArrayList<String> dataFields,
 			ResultSet dataJava) {
-		// TODO Auto-generated method stub
-		return null;
+		// TODO
+		ArrayList<DataContainer> test;
+		test = new ArrayList<>();
+		test.add(new DataContainer<Integer>(3));
+		test.add(new DataContainer<String>("Hola"));
+		return test;
 	}
 
 	@Override
