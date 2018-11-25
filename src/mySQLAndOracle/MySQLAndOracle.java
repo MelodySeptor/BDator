@@ -1,4 +1,4 @@
-package components;
+package mySQLAndOracle;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -43,7 +43,9 @@ public interface MySQLAndOracle {
 	public ResultSet executeQuery(String query, Statement statement);
 
 	/**
-	 * Process all data from query and return ArrayList of DataContainer.
+	 * Process all data from query and return ArrayList of DataContainer. This can
+	 * have: String, Blob, Integer, Long, Float, Double, BigDecimal, Date, Time,
+	 * Timestamp, Boolean and default Object.
 	 * 
 	 * @param dataType   ArrayList<String> with all data sorted.
 	 * @param dataFields ArrayList<String> with fields of Database.
