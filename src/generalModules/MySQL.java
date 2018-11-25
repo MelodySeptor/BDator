@@ -24,10 +24,10 @@ public class MySQL implements MySQLAndOracle {
 	}
 
 	@Override
-	public Connection createConnection(String driver, String urlConnection, String user, String password) {
+	public Connection createConnection(String urlConnection, String user, String password) {
 		Connection conn;
 		try {
-			Class.forName(driver);
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(urlConnection, user, password);
 		} catch (Exception e) {
 			conn = null;
@@ -123,6 +123,11 @@ public class MySQL implements MySQLAndOracle {
 		} catch (Exception e) {
 			return false;
 		}
+	}
+
+	@Override
+	public String refactorUrlConnection(String serverIP, String Port, String nameDatabase) {
+		return "jdbc:mysql://" + serverIP + ":" + Port + "/" + nameDatabase;
 	}
 
 }

@@ -21,7 +21,7 @@ public interface MySQLAndOracle {
 	 * @param password      String password of database.
 	 * @return Connection with database. Null if something was wrong.
 	 */
-	public Connection createConnection(String driver, String urlConnection, String user, String password);
+	public Connection createConnection(String urlConnection, String user, String password);
 	// https://alvinalexander.com/java/java-mysql-select-query-example
 	// https://www.javatpoint.com/example-to-connect-to-the-mysql-database
 
@@ -62,4 +62,14 @@ public interface MySQLAndOracle {
 	 * @return return True if its closed okay, False if something happens.
 	 */
 	public boolean closeStatement(Statement statement);
+
+	/**
+	 * Set up String for connection.
+	 * 
+	 * @param serverIP     String if its localhost, can put localhost.
+	 * @param Port         String as number of port.
+	 * @param nameDatabase String of name of database.
+	 * @return String refactorized.
+	 */
+	public String refactorUrlConnection(String serverIP, String Port, String nameDatabase);
 }
