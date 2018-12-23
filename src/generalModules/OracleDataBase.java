@@ -42,7 +42,7 @@ public class OracleDataBase implements MySQLAndOracle {
 	}
 
 	@Override
-	public String refactorUrlConnection(String serverIP, String Port, String nameDatabase) {
+	public String refactorSQLUrlConnection(String serverIP, String Port, String nameDatabase) {
 		// TODO Auto-generated method stub
 		return null;
 	}

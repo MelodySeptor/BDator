@@ -71,5 +71,5 @@ public interface MySQLAndOracle {
 	 * @param nameDatabase String of name of database.
 	 * @return String refactorized.
 	 */
-	public String refactorUrlConnection(String serverIP, String Port, String nameDatabase);
+	public String refactorSQLUrlConnection(String serverIP, String Port, String nameDatabase);
 }

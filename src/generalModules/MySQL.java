@@ -27,8 +27,10 @@ public class MySQL implements MySQLAndOracle {
 	public Connection createConnection(String urlConnection, String user, String password) {
 		Connection conn;
 		try {
+			// Class.forName("com.mysql.cj.jdbc.Driver");
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(urlConnection, user, password);
+			System.out.println("Connection established.");
 		} catch (Exception e) {
 			conn = null;
 		}
@@ -40,6 +42,7 @@ public class MySQL implements MySQLAndOracle {
 		Statement stat;
 		try {
 			stat = connection.createStatement();
+			System.out.println("Statement created.");
 		} catch (Exception e) {
 			stat = null;
 		}
@@ -51,6 +54,7 @@ public class MySQL implements MySQLAndOracle {
 		ResultSet res;
 		try {
 			res = statement.executeQuery(query);
+			System.out.println("Query done.");
 		} catch (Exception e) {
 			res = null;
 		}
@@ -119,6 +123,7 @@ public class MySQL implements MySQLAndOracle {
 	public boolean closeStatement(Statement statement) {
 		try {
 			statement.close();
+			System.out.println("Statement closed.");
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -126,7 +131,7 @@ public class MySQL implements MySQLAndOracle {
 	}
 
 	@Override
-	public String refactorUrlConnection(String serverIP, String Port, String nameDatabase) {
+	public String refactorSQLUrlConnection(String serverIP, String Port, String nameDatabase) {
 		return "jdbc:mysql://" + serverIP + ":" + Port + "/" + nameDatabase;
 	}
 
