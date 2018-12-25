@@ -1,8 +1,13 @@
 # BDator
 
-:toc: macro
-:toc-title:
-:toclevels: 99
+- [BDator](#bdator)
+  * [External libs](#external-libs)
+  * [Propose](#propose)
+  * [How use it](#how-use-it)
+    + [MySQL](#mysql)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## External libs
  - JDBC
