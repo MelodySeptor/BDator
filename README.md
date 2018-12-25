@@ -13,6 +13,8 @@ API to get database data more easy. Actually supports this database:
 There is some examples so how use this API in every case.
 
 ### MySQL
+(*) If some object its NULL, something was failed.
+
 ```java
 import java.sql.Connection;
 import java.sql.ResultSet;
