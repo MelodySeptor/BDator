@@ -13,7 +13,7 @@ API to get database data more easy. Actually supports this database:
 There is some examples so how use this API in every case.
 
 ### MySQL
-(*) If some object its NULL, something was failed.
+If some object its NULL, something was failed.
 
 ```java
 import java.sql.Connection;
@@ -38,15 +38,6 @@ public class test {
 		Statement statement = sql.createStatement(connection);
 		String query = "Select * From test where 1";
 		ResultSet resultSet = sql.executeQuery(query, statement);
-		try {
-			while (resultSet.next()) {
-				System.out.println(resultSet.getString(1) + ": " + resultSet.getString(2));
-			}
-		} catch (SQLException e) {
-			System.out.println(e);
-		}
-		resultSet = sql.executeQuery(query, statement);
-		System.out.println("2nda Query seguida.");
 		try {
 			while (resultSet.next()) {
 				System.out.println(resultSet.getString(1) + ": " + resultSet.getString(2));
