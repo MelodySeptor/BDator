@@ -1,4 +1,9 @@
 # BDator
+
+:toc: macro
+:toc-title:
+:toclevels: 99
+
 ## External libs
  - JDBC
  
